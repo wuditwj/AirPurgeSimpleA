@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.njwyt.airpurgesimple"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "AirPurge_${releaseTime()}.apk"
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+def releaseTime() {
+    return new Date().format("yyyyMMddHHmm", TimeZone.getTimeZone("GMT+8"))
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    api 'com.android.support:design:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    //kapt 'com.android.databinding:compiler:3.1.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // 单选框集合
+    implementation 'com.github.fodroid:XRadioGroup:v1.1'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.android.support:recyclerview-v7:26.1.0'
+    api(name:'xrecyclerview-release', ext:'aar')
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    // 数字选择器
+    implementation 'com.shawnlin:number-picker:2.4.6'
+    // 横向滑动条
+    implementation 'com.xw.repo:bubbleseekbar:3.15-lite'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // socket库
+    //implementation 'com.github.vilyever:AndroidSocketClient:3.0.3'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    // 本地存储替代shareprefer
+    implementation 'com.anupcowkur:reservoir:3.1.0'
+    // 时间选择器
+    implementation 'com.shawnlin:number-picker:2.4.6'
+}

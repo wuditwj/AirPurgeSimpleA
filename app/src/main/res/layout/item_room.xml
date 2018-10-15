@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="roomItem"
+            type="com.njwyt.airpurgesimple.entity.Room" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_rectangle_selector">
+
+        <com.njwyt.airpurgesimple.view.IconTextView
+            android:id="@+id/tv_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="@string/ic_house"
+            android:textColor="@color/colorGreen"
+            android:textSize="?df_22sp" />
+
+        <TextView
+            android:id="@+id/tv_room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/tv_room"
+            android:text="@{roomItem.roomName}"
+            android:textColor="@color/colorGreen"
+            android:textSize="?df_16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/pm2_5"
+                android:textColor="@color/colorGreen"
+                android:textSize="?df_16sp" />
+
+            <TextView
+                android:id="@+id/tv_pm2_5"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@{roomItem.pm2_5 + ``}"
+                android:textColor="@color/colorGreen"
+                android:textSize="?df_16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/voc"
+                android:textColor="@color/colorGreen"
+                android:textSize="?df_16sp" />
+
+            <TextView
+                android:id="@+id/tv_voc"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="优"
+                android:textColor="@color/colorGreen"
+                android:textSize="?df_16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/air_quality"
+                android:textColor="@color/colorGreen"
+                android:textSize="?df_16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_air_quality"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@{roomItem.airQuality + ``}"
+                android:textColor="@color/colorGreen"
+                android:textSize="?df_20sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

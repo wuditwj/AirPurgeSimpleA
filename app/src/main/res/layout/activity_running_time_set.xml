@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tool_bar"
+        style="@style/toolBarStyle">
+
+        <com.njwyt.airpurgesimple.view.IconTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/ic_cancel"
+            android:textColor="@color/colorBackground"
+            android:textSize="?df_22sp" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/toolBarTitleStyle" />
+
+        <com.njwyt.airpurgesimple.view.IconTextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/ic_confirm"
+            android:textColor="@color/colorBackground"
+            android:textSize="?df_22sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/np_star_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:np_dividerColor="@color/transparent"
+                    app:np_selectedTextColor="@color/colorGreen2"
+                    app:np_selectedTextSize="?df_18sp"
+                    app:np_textColor="@color/colorGray"
+                    app:np_textSize="?df_14sp"
+                    app:np_wrapSelectorWheel="true" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/np_star_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:np_dividerColor="@color/transparent"
+                    app:np_selectedTextColor="@color/colorGreen2"
+                    app:np_selectedTextSize="?df_18sp"
+                    app:np_textColor="@color/colorGray"
+                    app:np_textSize="?df_14sp"
+                    app:np_wrapSelectorWheel="true" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ~ "
+                android:textColor="@color/colorGray"
+                android:textSize="?df_18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/np_stop_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:np_dividerColor="@color/transparent"
+                    app:np_selectedTextColor="@color/colorGreen2"
+                    app:np_selectedTextSize="?df_18sp"
+                    app:np_textColor="@color/colorGray"
+                    app:np_textSize="?df_14sp"
+                    app:np_wrapSelectorWheel="true" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/np_stop_minute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:np_dividerColor="@color/transparent"
+                    app:np_selectedTextColor="@color/colorGreen2"
+                    app:np_selectedTextSize="?df_18sp"
+                    app:np_textColor="@color/colorGray"
+                    app:np_textSize="?df_14sp"
+                    app:np_wrapSelectorWheel="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_repeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/repeat"
+                android:textColor="@color/colorGray"
+                android:textSize="?df_14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="right|center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_weeks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/everyday"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <com.njwyt.airpurgesimple.view.IconTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/ic_goto"
+                    android:textColor="@color/colorGray"
+                    android:textSize="?df_16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

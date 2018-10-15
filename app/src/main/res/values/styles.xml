@@ -1,0 +1,160 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:typeface">serif</item>
+    </style>
+    　
+    <style name="Transparent" parent="AppTheme.Base">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 三种字体大小 -->
+    <style name="Default_TextSize_Small">
+        <item name="df_14sp">@dimen/sp_12</item>
+        <item name="df_16sp">@dimen/sp_14</item>
+        <item name="df_18sp">@dimen/sp_16</item>
+        <item name="df_20sp">@dimen/sp_18</item>
+        <item name="df_22sp">@dimen/sp_20</item>
+        <item name="df_24sp">@dimen/sp_22</item>
+        <item name="df_30sp">@dimen/sp_28</item>
+    </style>
+
+    <!-- 默认为中等大小 -->
+    <style name="Default_TextSize_Middle">
+        <item name="df_12sp">@dimen/sp_12</item>
+        <item name="df_14sp">@dimen/sp_14</item>
+        <item name="df_16sp">@dimen/sp_16</item>
+        <item name="df_18sp">@dimen/sp_18</item>
+        <item name="df_20sp">@dimen/sp_20</item>
+        <item name="df_22sp">@dimen/sp_22</item>
+        <item name="df_24sp">@dimen/sp_24</item>
+        <item name="df_30sp">@dimen/sp_30</item>
+    </style>
+
+
+    <style name="Default_TextSize_Big">
+        <item name="df_14sp">@dimen/sp_16</item>
+        <item name="df_16sp">@dimen/sp_18</item>
+        <item name="df_18sp">@dimen/sp_20</item>
+        <item name="df_20sp">@dimen/sp_22</item>
+        <item name="df_22sp">@dimen/sp_24</item>
+        <item name="df_24sp">@dimen/sp_26</item>
+        <item name="df_30sp">@dimen/sp_32</item>
+    </style>
+
+
+    <style name="actionBarTv">
+        <item name="android:textSize">?df_20sp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="toolbar_white_theme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="android:actionBarSize">46dp</item>
+    </style>
+
+    <style name="toolBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/toolbar_heigh</item>
+        <item name="android:background">@color/colorGreen</item>
+        <item name="android:paddingTop">@dimen/toolbar_padding_top</item>
+    </style>
+
+    <style name="toolBarTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="dataListStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">@color/colorGreen</item>
+        <item name="android:textSize">?df_18sp</item>
+    </style>
+
+    <style name="setItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:background">@drawable/set_item_shape</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="setItemIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">@color/colorGreen</item>
+        <item name="android:textSize">?df_24sp</item>
+    </style>
+
+    <style name="setSysEditStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_20</item>
+        <item name="android:textColor">@color/colorGreen2</item>
+        <item name="android:textColorHint">#5e5e5e</item>
+        <item name="android:background">@drawable/edit_bg</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:inputType">number|numberDecimal</item>
+    </style>
+
+    <style name="setSysTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/colorGreen</item>
+        <item name="android:textSize">?df_14sp</item>
+    </style>
+
+    <style name="setSysViewLineStyle">
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/colorLine</item>
+    </style>
+
+    <style name="setting_mode1_textImage">
+        <item name="android:padding">30dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/set_mode1_shape</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="setting_mode1_textImage1">
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <!--<item name="android:background">@drawable/set_mode1_shape</item>-->
+        <item name="android:textSize">20dp</item>
+    </style>
+
+</resources>

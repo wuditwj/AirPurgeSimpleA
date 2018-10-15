@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_heigh"
+            android:background="@color/colorGreen"
+            android:paddingTop="@dimen/toolbar_padding_top">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:textColor="#FFFFFF"
+                android:textSize="?df_20sp" />
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/system_set"
+            style="@style/setItemStyle">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                style="@style/setItemIconStyle"
+                android:text="@string/ic_set_system" />
+
+            <TextView
+                style="@style/dataListStyle"
+                android:text="@string/set_system" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <LinearLayout
+            android:id="@+id/mode_set"
+            style="@style/setItemStyle">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                style="@style/setItemIconStyle"
+                android:text="@string/ic_set_mode" />
+
+            <TextView
+                style="@style/dataListStyle"
+                android:text="@string/set_mode" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_mode"
+                    android:textColor="@color/colorGreen"/>
+
+                <TextView
+                    android:id="@+id/current_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/colorGreen"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <LinearLayout
+            android:id="@+id/data_set"
+            style="@style/setItemStyle">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                style="@style/setItemIconStyle"
+                android:text="@string/ic_set_data" />
+
+            <TextView
+                style="@style/dataListStyle"
+                android:text="@string/set_data" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

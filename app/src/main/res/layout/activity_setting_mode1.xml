@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tool_bar"
+        style="@style/toolBarStyle">
+
+        <com.njwyt.airpurgesimple.view.IconTextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/ic_back"
+            android:textColor="@color/colorBackground"
+            android:textSize="?df_22sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            style="@style/toolBarTitleStyle"
+            android:text="@string/set_mode" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:fillViewport="true">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ly_intelligent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_intelligent"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/intelligent"
+                    android:text="@string/intelligent_mode" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray" />
+
+            <LinearLayout
+                android:id="@+id/ly_strong"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_strong"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/strong"
+                    android:text="@string/strong" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ly_medium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_medium"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/medium"
+                    android:text="@string/medium" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray" />
+
+            <LinearLayout
+                android:id="@+id/ly_weak"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_weak"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/weak"
+                    android:text="@string/weak" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ly_formalde_removal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_formalde_removal"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/formalde"
+                    android:text="@string/formalde_removal" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray" />
+
+            <LinearLayout
+                android:id="@+id/ly_force"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_force"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/force"
+                    android:text="@string/force" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ly_shutdown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tv_shutdown"
+                    style="@style/setting_mode1_textImage1"
+                    android:drawableTop="@drawable/shutdown"
+                    android:text="@string/shutdown" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray" />
+
+            <RelativeLayout
+                android:id="@+id/ly_timer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/set_mode1_shape">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <TextView
+                        android:id="@+id/tv_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/set_mode1_shape"
+                        android:drawablePadding="5dp"
+                        android:drawableTop="@drawable/timer"
+                        android:text="@string/timer2"
+                        android:textSize="20sp" />
+
+                    <Switch
+                        android:id="@+id/sw_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:switchMinWidth="60dp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--</ScrollView>-->
+
+</LinearLayout>

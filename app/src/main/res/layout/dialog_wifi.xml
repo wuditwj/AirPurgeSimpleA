@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请输入wifi账号及密码"
+        android:textColor="@color/colorGreen"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/wifiName"
+        android:layout_marginTop="10dp"
+        android:hint="请输入WiFi IP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/wifiPassWord"
+        android:layout_marginTop="10dp"
+        android:hint="请输入WiFi密码"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/wifiOK"
+        android:layout_weight="1"
+        android:text="确定"
+        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ok_button_selector"/>
+
+    </LinearLayout>
+
+</LinearLayout>

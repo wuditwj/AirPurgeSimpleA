@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="runningTime"
+            type="com.njwyt.airpurgesimple.entity.RunningTime" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/simple_rectangle_selector"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{runningTime.startTime.toString()}"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ~ "
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{runningTime.endTime}"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp">
+
+                <TextView
+                    android:id="@+id/tv_weeks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="每天"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ic_cancel"
+                android:textColor="@color/colorGreen"
+                android:layout_marginRight="5dp"
+                android:textSize="?df_16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

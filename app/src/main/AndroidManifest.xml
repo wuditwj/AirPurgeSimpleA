@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.njwyt.airpurgesimple">
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:name=".application.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="ZikKu5RgCRIHaau1RTMPaq8e8NwTWYY0" />
+
+        <activity android:name=".activity.SettingMode1Activity"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.RoomDetailActivity"
+            android:theme="@style/Transparent" />
+        <activity android:name=".activity.SplashActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.SettingSystemActivity" />
+        <activity android:name=".activity.SettingIntelligentParmActivity" />
+        <activity android:name=".activity.SettingWindsParmActivity" />
+        <activity android:name=".activity.RunningTimeActivity" />
+        <activity android:name=".activity.RunningTimeSetActivity" />
+        <activity android:name=".activity.RunningTimeRepeatActivity" />
+        <activity android:name=".activity.RunningTimeSimpleActivity"
+            android:screenOrientation="portrait"/>
+
+        <service android:name=".service.ClientService" />
+        <activity android:name=".activity.DataManageActivity" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+    </application>
+
+</manifest>

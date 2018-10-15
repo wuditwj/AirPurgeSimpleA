@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/toolbar_white_theme">
+
+        <!--标题栏-->
+
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tool_bar"
+            style="@style/toolBarStyle">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/ic_back"
+                android:textColor="@color/colorBackground"
+                android:textSize="?df_22sp" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                style="@style/toolBarTitleStyle" />
+
+            <TextView
+                android:id="@+id/btn_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginEnd="10dp"
+                android:padding="10dp"
+                android:text="@string/confirm"
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--数据设置-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <!--服务器IP-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="服务器IP:"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/wifiIP"
+                        style="@style/setSysEditStyle"
+                        android:layout_weight="1"
+                        android:hint="例:192.168.1.1" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ok_button_selector"
+                        android:text="测试"
+                        android:textSize="?df_14sp" />
+                </LinearLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+                <!--传感器数量-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        style="@style/setSysTextStyle"
+                        android:text="传感器数量:" />
+
+                    <TextView
+                        android:id="@+id/ge"
+                        style="@style/setSysTextStyle"
+                        android:layout_alignParentRight="true"
+                        android:text="个" />
+
+                    <com.shawnlin.numberpicker.NumberPicker
+                        android:id="@+id/np_sensor_count"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@+id/ge"
+                        app:np_dividerColor="@color/transparent"
+                        app:np_max="5"
+                        app:np_min="2"
+                        app:np_orientation="horizontal"
+                        app:np_selectedTextColor="@color/colorGreen"
+                        app:np_selectedTextSize="24sp"
+                        app:np_textColor="@color/colorGreen"
+                        app:np_textSize="20sp"
+                        app:np_value="1"
+                        app:np_wrapSelectorWheel="true" />
+                </RelativeLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+                <!--使用面积-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        style="@style/setSysTextStyle"
+                        android:text="使用面积:" />
+
+                    <TextView
+                        android:id="@+id/ge1"
+                        style="@style/setSysTextStyle"
+                        android:layout_alignParentRight="true"
+                        android:text="m ²" />
+
+                    <EditText
+                        android:id="@+id/roomArea"
+                        style="@style/setSysEditStyle"
+                        android:layout_toLeftOf="@id/ge1"
+                        android:hint="0" />
+                </RelativeLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+                <!--层高-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        style="@style/setSysTextStyle"
+                        android:text="层高:" />
+
+                    <TextView
+                        android:id="@+id/ge2"
+                        style="@style/setSysTextStyle"
+                        android:layout_alignParentRight="true"
+                        android:text="cm" />
+
+                    <EditText
+                        android:id="@+id/roomHight"
+                        style="@style/setSysEditStyle"
+                        android:layout_toLeftOf="@id/ge2"
+                        android:hint="0" />
+                </RelativeLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+                <!--居住人数-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        style="@style/setSysTextStyle"
+                        android:text="居住人数:" />
+
+                    <TextView
+                        android:id="@+id/ge3"
+                        style="@style/setSysTextStyle"
+                        android:layout_alignParentRight="true"
+                        android:text="人" />
+
+                    <EditText
+                        android:id="@+id/peopleNum"
+                        style="@style/setSysEditStyle"
+                        android:layout_toLeftOf="@id/ge3"
+                        android:hint="0" />
+                </RelativeLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+                <!--过滤器使用时间-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        style="@style/setSysTextStyle"
+                        android:text="过滤器使用时间:" />
+
+                    <TextView
+                        android:id="@+id/ge4"
+                        style="@style/setSysTextStyle"
+                        android:layout_alignParentRight="true"
+                        android:text="天" />
+
+                    <EditText
+                        android:id="@+id/useTime"
+                        style="@style/setSysEditStyle"
+                        android:layout_toLeftOf="@id/ge4"
+                        android:hint="0" />
+                </RelativeLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+                <!--电机功率-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        style="@style/setSysTextStyle"
+                        android:text="电机功率:" />
+
+                    <TextView
+                        android:id="@+id/ge5"
+                        style="@style/setSysTextStyle"
+                        android:layout_alignParentRight="true"
+                        android:text="W" />
+
+                    <EditText
+                        android:id="@+id/motorPower"
+                        style="@style/setSysEditStyle"
+                        android:layout_toLeftOf="@id/ge5"
+                        android:hint="0" />
+                </RelativeLayout>
+
+                <View style="@style/setSysViewLineStyle" />
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

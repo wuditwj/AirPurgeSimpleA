@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">简化版雾霾传感器控制程序</string>
+
+    <string name="copyright">Copyright ©2018 NJWYT All Rights Reserved</string>
+
+    <string name="room">房间</string>
+    <string name="setting">设置</string>
+    <string name="air_quality">空气质量</string>
+    <string name="set_system">系统设置</string>
+    <string name="set_mode">模式设置</string>
+    <string name="set_data">数据管理</string>
+    <string name="current_mode">当前模式：</string>
+
+    <!--数据管理-->
+    <string name="data_backup">系统数据备份</string>
+    <string name="data_upload">系统数据上传</string>
+    <string name="data_download">历史数据下载</string>
+    <string name="data_analysis">历史数据分析</string>
+    <string name="data_restore">系统数据恢复</string>
+    <string name="data_restore_factory">恢复出厂设置</string>
+
+    <!--room-->
+    <string name="temperature">温度</string>
+    <string name="humidity">湿度</string>
+    <string name="voc">VOC</string>
+    <string name="pm2_5">PM2.5</string>
+    <string name="fan_power">风机功率</string>
+    <string name="infinite">无限制</string>
+
+    <!-- 模式选择 -->
+    <string name="intelligent_mode">智能模式</string>
+    <string name="strong">强</string>
+    <string name="medium">中</string>
+    <string name="weak">弱</string>
+    <string name="formalde_removal">除甲醛</string>
+    <string name="force">直排</string>
+    <string name="shutdown">关机</string>
+    <string name="timer">定时器</string>
+    <string name="timer2">定时</string>
+    <string name="confirm">确认</string>
+    <string name="waiting">正在修改，请等待&#8230;</string>
+    <string name="enabled">使用</string>
+    <string name="disable">不使用</string>
+
+    <!-- 智能模式 -->
+    <string name="sensitivity">灵敏度</string>
+    <string name="temperature_set">温度设置</string>
+    <string name="humidity_set">湿度设置</string>
+    <string name="day">白天</string>
+    <string name="night">夜晚</string>
+    <string name="max_power">最大功率</string>
+    <string name="min_power">最小功率</string>
+    <string name="star_time">开机时间</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+
+    <!-- 强中弱、甲醛模式 -->
+    <string name="parm_set">参数设置</string>
+    <string name="fan_set">风机设置</string>
+    <string name="new_wind_time">新风时间</string>
+    <string name="interval_time">停机间隔</string>
+    <string name="fan_max_power">风机最大功率</string>
+    <string name="fan_min_power">风机最小功率</string>
+    <string name="mandatory_run_set">强制排风设置</string>
+    <string name="minute">分钟</string>
+    <string name="watt">瓦</string>
+
+    <!-- 时段 -->
+    <string name="MON">周一</string>
+    <string name="TUE">周二</string>
+    <string name="WED">周三</string>
+    <string name="THU">周四</string>
+    <string name="FRI">周五</string>
+    <string name="SAT">周六</string>
+    <string name="SUN">周日</string>
+    <string name="everyday">每天</string>
+    <string name="edit_timer">编辑时段</string>
+    <string name="repeat">重复</string>
+
+    <!-- 提示 -->
+    <string name="hint_select_time">请选择需要延迟的时间与模式（单位：小时）</string>
+    <string name="hint_edit_success">设置成功</string>
+    <string name="hint_timeout">连接超时，请稍后重试</string>
+    <string name="hint_count_down">距下一状态剩</string>
+    <string name="hint_data_backup">是否要保存当前设置状态？</string>
+    <string name="hint_data_restore">是否要恢复到上次状态？</string>
+    <string name="hint_data_restore_factory">是否要恢复出厂设置？</string>
+    <string name="hint_unlock_admin">已开启管理者模式</string>
+    <string name="hint_lock_admin">已关闭管理者模式</string>
+    <string name="hint_unlock_click_time">再点击%1$d次，进入管理员模式</string>
+    <string name="hint_lock_click_time">再点击%1$d次，退出管理员模式</string>
+    <string name="hint_connect">请先连接系统WiFi</string>
+    <string name="hint_connect_fail">连接失败</string>
+    <string name="hint_get_ip">正在获取IP地址…</string>
+    <string name="hint_identity">正在验证身份信息…</string>
+    <string name="hint_connecting">连接中…</string>
+    <string name="hint_initial">正在初始化中…</string>
+    <string name="hint_connect_suc">已连接到网络:</string>
+    <string name="hint_connect_dis">连接已断开</string>
+
+    <!-- dialog -->
+    <string name="dialog_yes">是</string>
+    <string name="dialog_no">否</string>
+
+    <!-- icon -->
+    <string name="ic_logo">&#xe679;</string>
+    <string name="ic_door">&#xe609;</string>
+    <string name="ic_door_click">&#xe602;</string>
+    <string name="ic_setting">&#xe65b;</string>
+    <string name="ic_setting_click">&#xe603;</string>
+    <string name="ic_house">&#xe60f;</string>
+    <string name="ic_closestool">&#xe604;</string>
+    <string name="ic_drawing_room">&#xe60b;</string>
+    <string name="ic_bed">&#xe623;</string>
+    <string name="ic_book">&#xe633;</string>
+    <string name="ic_tableware">&#xe61d;</string>
+    <string name="ic_pot">&#xe601;</string>
+    <string name="ic_shower">&#xe606;</string>
+    <string name="ic_set_system">&#xe641;</string>
+    <string name="ic_set_mode">&#xe61f;</string>
+    <string name="ic_set_data">&#xe664;</string>
+    <string name="ic_back">&#xe610;</string>
+    <string name="ic_goto">&#xe618;</string>
+    <string name="ic_add">&#xe622;</string>
+    <string name="ic_pm2_5">&#xe605;</string>
+    <string name="ic_leaves">&#xe65f;</string>
+    <string name="ic_temperature">&#xe67a;</string>
+    <string name="ic_humidity">&#xe62f;</string>
+    <string name="ic_voc">&#xe69e;</string>
+    <string name="ic_cancel">&#xe617;</string>
+    <string name="ic_confirm">&#xe60e;</string>
+</resources>

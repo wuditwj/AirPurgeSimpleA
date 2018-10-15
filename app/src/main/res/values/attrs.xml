@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="FontSize">
+        <attr name="df_12sp" format="reference|dimension" />
+        <attr name="df_14sp" format="reference|dimension" />
+        <attr name="df_16sp" format="reference|dimension" />
+        <attr name="df_18sp" format="reference|dimension" />
+        <attr name="df_20sp" format="reference|dimension" />
+        <attr name="df_22sp" format="reference|dimension" />
+        <attr name="df_24sp" format="reference|dimension" />
+        <attr name="df_30sp" format="reference|dimension" />
+    </declare-styleable>
+</resources>

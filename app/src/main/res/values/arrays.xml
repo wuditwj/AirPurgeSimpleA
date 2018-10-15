@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <array name="icon_unSelect">
+        <item>@string/ic_door</item>
+        <item>@string/ic_setting</item>
+    </array>
+
+    <array name="icon_selected">
+        <item>@string/ic_door_click</item>
+        <item>@string/ic_setting_click</item>
+    </array>
+
+    <!-- 风力等级 -->
+    <array name="winds">
+        <item>@string/intelligent_mode</item>
+        <item>@string/strong</item>
+        <item>@string/medium</item>
+        <item>@string/weak</item>
+        <item>@string/formalde_removal</item>
+    </array>
+
+    <!-- 周 -->
+    <array name="weeks">
+        <item>@string/MON</item>
+        <item>@string/TUE</item>
+        <item>@string/WED</item>
+        <item>@string/THU</item>
+        <item>@string/FRI</item>
+        <item>@string/SAT</item>
+        <item>@string/SUN</item>
+    </array>
+</resources>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tool_bar"
+            style="@style/toolBarStyle">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/ic_back"
+                android:textColor="@color/colorBackground"
+                android:textSize="?df_22sp" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                style="@style/toolBarTitleStyle" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperature_set"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/sensitivity"
+                        android:textColor="@color/colorGreen2"
+                        android:textSize="?df_14sp" />
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_temperature_sensitivity"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="1"
+                        app:bsb_min="5"
+                        app:bsb_progress="3"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_count="4"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_12sp"
+                        app:bsb_show_section_mark="true"
+                        app:bsb_show_thumb_text="true"
+                        app:bsb_thumb_text_size="?df_12sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.xw.repo.BubbleSeekBar
+                android:id="@+id/bs_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:bsb_auto_adjust_section_mark="true"
+                app:bsb_max="18"
+                app:bsb_min="26"
+                app:bsb_progress="23"
+                app:bsb_second_track_color="@color/colorGreen2"
+                app:bsb_section_count="8"
+                app:bsb_section_text_position="below_section_mark"
+                app:bsb_section_text_size="?df_14sp"
+                app:bsb_show_section_mark="true"
+                app:bsb_show_thumb_text="true"
+                app:bsb_thumb_text_size="?df_16sp"
+                app:bsb_touch_to_seek="true"
+                app:bsb_track_color="@color/colorGreen2" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/humidity_set"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/sensitivity"
+                        android:textColor="@color/colorGreen2"
+                        android:textSize="?df_14sp" />
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_humidity_sensitivity"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="1"
+                        app:bsb_min="5"
+                        app:bsb_progress="3"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_count="4"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_12sp"
+                        app:bsb_show_section_mark="true"
+                        app:bsb_show_thumb_text="true"
+                        app:bsb_thumb_text_size="?df_12sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.xw.repo.BubbleSeekBar
+                android:id="@+id/bs_humidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:bsb_auto_adjust_section_mark="true"
+                app:bsb_max="40"
+                app:bsb_min="60"
+                app:bsb_progress="50"
+                app:bsb_second_track_color="@color/colorGreen2"
+                app:bsb_section_text_position="bottom_sides"
+                app:bsb_section_text_size="?df_14sp"
+                app:bsb_show_thumb_text="true"
+                app:bsb_thumb_text_size="?df_16sp"
+                app:bsb_touch_to_seek="true"
+                app:bsb_track_color="@color/colorGreen2" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="@string/max_power"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="@string/min_power"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="@string/star_time"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text="@string/day"
+                    android:textColor="@color/colorGreen2"
+                    android:textSize="?df_14sp" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bs_day_maxpower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="4"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_max="10"
+                    app:bsb_min="100"
+                    app:bsb_progress="50"
+                    app:bsb_second_track_color="@color/colorGreen2"
+                    app:bsb_section_count="8"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_section_text_size="?df_12sp"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_thumb_text_size="?df_12sp"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_track_color="@color/colorGreen2" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bs_day_minpower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="4"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_max="10"
+                    app:bsb_min="100"
+                    app:bsb_progress="50"
+                    app:bsb_second_track_color="@color/colorGreen2"
+                    app:bsb_section_count="8"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_section_text_size="?df_12sp"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_thumb_text_size="?df_12sp"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_track_color="@color/colorGreen2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="4"
+                    android:gravity="center">
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_day_startime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="6"
+                        app:bsb_min="12"
+                        app:bsb_progress="6"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_count="6"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_12sp"
+                        app:bsb_show_thumb_text="true"
+                        app:bsb_thumb_text_size="?df_12sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:gravity="center"
+                        android:text="@string/am"
+                        android:textColor="@color/colorGreen2"
+                        android:textSize="?df_12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:text="@string/night"
+                    android:textColor="@color/colorGreen2"
+                    android:textSize="?df_14sp" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bs_night_maxpower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="4"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_max="10"
+                    app:bsb_min="100"
+                    app:bsb_progress="50"
+                    app:bsb_second_track_color="@color/colorGreen2"
+                    app:bsb_section_count="8"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_section_text_size="?df_12sp"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_thumb_text_size="?df_12sp"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_track_color="@color/colorGreen2" />
+
+                <com.xw.repo.BubbleSeekBar
+                    android:id="@+id/bs_night_minpower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="4"
+                    app:bsb_auto_adjust_section_mark="true"
+                    app:bsb_max="10"
+                    app:bsb_min="100"
+                    app:bsb_progress="50"
+                    app:bsb_second_track_color="@color/colorGreen2"
+                    app:bsb_section_count="8"
+                    app:bsb_section_text_position="bottom_sides"
+                    app:bsb_section_text_size="?df_12sp"
+                    app:bsb_show_thumb_text="true"
+                    app:bsb_thumb_text_size="?df_12sp"
+                    app:bsb_touch_to_seek="true"
+                    app:bsb_track_color="@color/colorGreen2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="4"
+                    android:gravity="center">
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_night_startime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="6"
+                        app:bsb_min="12"
+                        app:bsb_progress="6"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_count="6"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_12sp"
+                        app:bsb_show_thumb_text="true"
+                        app:bsb_thumb_text_size="?df_12sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:gravity="center"
+                        android:text="@string/pm"
+                        android:textColor="@color/colorGreen2"
+                        android:textSize="?df_12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <TextView
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ok_button_selector"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="@color/colorBackground"
+                android:textSize="?df_16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

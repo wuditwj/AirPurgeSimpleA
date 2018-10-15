@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/toolbar_white_theme">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        style="@style/toolBarStyle">
+
+        <com.njwyt.airpurgesimple.view.IconTextView
+            android:id="@+id/tool_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/ic_back"
+            android:textColor="@color/colorBackground"
+            android:textSize="?df_22sp" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/toolBarTitleStyle" />
+    </android.support.v7.widget.Toolbar>
+
+    <!--备份-->
+    <LinearLayout
+        android:id="@+id/data_backup"
+        style="@style/setItemStyle">
+
+
+        <TextView
+            style="@style/dataListStyle"
+            android:text="@string/data_backup" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
+
+    <!--上传-->
+    <LinearLayout
+        android:id="@+id/data_upload"
+        style="@style/setItemStyle"
+        android:visibility="gone">
+
+
+        <TextView
+            style="@style/dataListStyle"
+            android:text="@string/data_upload" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        android:visibility="gone" />
+
+    <!--下载-->
+    <LinearLayout
+        android:id="@+id/data_download"
+        style="@style/setItemStyle"
+        android:visibility="gone">
+
+
+        <TextView
+            style="@style/dataListStyle"
+            android:text="@string/data_download" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        android:visibility="gone" />
+
+    <!--分析-->
+    <LinearLayout
+        android:id="@+id/data_analysis"
+        style="@style/setItemStyle"
+        android:visibility="gone">
+
+
+        <TextView
+            style="@style/dataListStyle"
+            android:text="@string/data_analysis" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine"
+        android:visibility="gone" />
+
+    <!--恢复-->
+    <LinearLayout
+        android:id="@+id/data_restore"
+        style="@style/setItemStyle">
+
+
+        <TextView
+            style="@style/dataListStyle"
+            android:text="@string/data_restore" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
+
+    <!--恢复出厂设置-->
+    <LinearLayout
+        android:id="@+id/data_restore_factory"
+        style="@style/setItemStyle">
+
+
+        <TextView
+            style="@style/dataListStyle"
+            android:text="@string/data_restore_factory" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLine" />
+
+</LinearLayout>

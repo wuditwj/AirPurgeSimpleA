@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tool_bar"
+            style="@style/toolBarStyle">
+
+            <com.njwyt.airpurgesimple.view.IconTextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/ic_back"
+                android:textColor="@color/colorBackground"
+                android:textSize="?df_22sp" />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                style="@style/toolBarTitleStyle" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <com.njwyt.airpurgesimple.view.ObservableScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_ok"
+            android:layout_below="@id/tool_bar"
+            android:fillViewport="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/fan_set"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/new_wind_time"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="?df_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_minute_new_wind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="3"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/minute"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_new_wind_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="0"
+                        app:bsb_min="60"
+                        app:bsb_progress="3"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_14sp"
+                        app:bsb_thumb_text_size="?df_16sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/interval_time"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="?df_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_minute_interval"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="12"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/minute"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_interval_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="0"
+                        app:bsb_min="60"
+                        app:bsb_progress="12"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_14sp"
+                        app:bsb_thumb_text_size="?df_16sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fan_max_power"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="?df_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_watt_max"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="50"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/watt"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_fan_max_power"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="40"
+                        app:bsb_min="100"
+                        app:bsb_progress="50"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_14sp"
+                        app:bsb_thumb_text_size="?df_16sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/fan_min_power"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="?df_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_watt_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="20"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/watt"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_fan_min_power"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="0"
+                        app:bsb_min="39"
+                        app:bsb_progress="20"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_14sp"
+                        app:bsb_thumb_text_size="?df_16sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/mandatory_run_set"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="?df_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pm2_5"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="?df_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_num_pm2_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="200"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="μg/m3"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_pm2_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="1"
+                        app:bsb_min="500"
+                        app:bsb_progress="300"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_14sp"
+                        app:bsb_thumb_text_size="?df_16sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/voc"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="?df_16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_num_voc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="100"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:text="μg/m3"
+                                android:textColor="@color/colorGreen2"
+                                android:textSize="?df_14sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.xw.repo.BubbleSeekBar
+                        android:id="@+id/bs_voc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:bsb_auto_adjust_section_mark="true"
+                        app:bsb_max="1"
+                        app:bsb_min="500"
+                        app:bsb_progress="300"
+                        app:bsb_second_track_color="@color/colorGreen2"
+                        app:bsb_section_text_position="bottom_sides"
+                        app:bsb_section_text_size="?df_14sp"
+                        app:bsb_thumb_text_size="?df_16sp"
+                        app:bsb_touch_to_seek="true"
+                        app:bsb_track_color="@color/colorGreen2" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.njwyt.airpurgesimple.view.ObservableScrollView>
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/ok_button_selector"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/colorBackground"
+            android:textSize="?df_16sp" />
+    </RelativeLayout>
+</layout>
