@@ -24,8 +24,9 @@ class RunningTimeSimpleActivity : BaseActivity() {
 
     val TAG = "--==>>"
 
-    private lateinit var wifiManager: WifiManager
-    private lateinit var wifiAutoConnectManager: WifiAutoConnectManager
+    //    private lateinit var wifiManager: WifiManager
+//    private lateinit var wifiAutoConnectManager: WifiAutoConnectManager
+    private lateinit var wifiConnect: WifiConnect
     private lateinit var sharedPreferencesHelper: SharedPreferencesHelper
 
     private var reflashHandler = Handler()
@@ -34,8 +35,9 @@ class RunningTimeSimpleActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         EventBus.getDefault().register(this)
         setContentView(R.layout.activity_running_time_simple)
-        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
-        wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+//        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+//        wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+        wifiConnect=WifiConnect(this)
         initView()
         initData()
         initToolBar()
@@ -61,7 +63,7 @@ class RunningTimeSimpleActivity : BaseActivity() {
                 }
             }
 
-        // 发送超时
+            // 发送超时
             Type.DISMISS_PROGRESS_DIALOG_TIMEOUT -> {
 
                 // 新开启线程弹通知
@@ -109,7 +111,7 @@ class RunningTimeSimpleActivity : BaseActivity() {
 
         //判断当前连接是否系统wifi
 //获得当前连接的wifiIP
-        val n=wifiAutoConnectManager.getInformation(this)
+        val n=wifiConnect.getInformation(this)
         Log.i(TAG,"当前连接:   $n")
 //        Log.i("--==>>","取消保存")
         sharedPreferencesHelper = SharedPreferencesHelper(this, "")

@@ -15,10 +15,7 @@ import com.njwyt.airpurgesimple.content.Type
 import com.njwyt.airpurgesimple.db.ReservoirHelper
 import com.njwyt.airpurgesimple.entity.MessageEvent
 import com.njwyt.airpurgesimple.entity.SystemMode
-import com.njwyt.airpurgesimple.util.ProgressDialogUtil
-import com.njwyt.airpurgesimple.util.SharedPreferencesHelper
-import com.njwyt.airpurgesimple.util.ToastUtil
-import com.njwyt.airpurgesimple.util.WifiAutoConnectManager
+import com.njwyt.airpurgesimple.util.*
 import kotlinx.android.synthetic.main.activity_setting_mode1.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -37,8 +34,9 @@ class SettingMode1Activity : BaseActivity() {
     var selectedMode = 1                    // 默认选中模式
     var reflashHandler = Handler()
     //--------------------------------------------------------------------------------------------//
-    private lateinit var wifiManager: WifiManager
-    private lateinit var wifiAutoConnectManager: WifiAutoConnectManager
+//    private lateinit var wifiManager: WifiManager
+//    private lateinit var wifiAutoConnectManager: WifiAutoConnectManager
+    private lateinit var wifiConnect: WifiConnect
     private lateinit var sharedPreferencesHelper: SharedPreferencesHelper
 
 
@@ -61,8 +59,9 @@ class SettingMode1Activity : BaseActivity() {
 
 
     private fun initIsFirst() {
-        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
-        wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+//        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+//        wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+        wifiConnect= WifiConnect(this)
     }
 
     private fun init() {
@@ -103,7 +102,7 @@ class SettingMode1Activity : BaseActivity() {
 
         //判断当前连接是否系统wifi
 //获得当前连接的wifiIP
-        val n=wifiAutoConnectManager.getInformation(this)
+        val n=wifiConnect.getInformation(this)
         Log.i(TAG,"当前连接:   $n")
 //        Log.i("--==>>","取消保存")
         sharedPreferencesHelper = SharedPreferencesHelper(this, "")
@@ -182,7 +181,7 @@ class SettingMode1Activity : BaseActivity() {
     fun getSystemModeByEventBus(msg: MessageEvent<SystemMode>) {
 
         when (msg.message) {
-        // 系统模式切换
+            // 系统模式切换
             Type.SYSTEM_MODE -> {
                 reflashHandler.post {
                     mSystemMode = msg.body
@@ -191,7 +190,7 @@ class SettingMode1Activity : BaseActivity() {
                 }
             }
 
-        // 发送成功
+            // 发送成功
             Type.DISMISS_PROGRESS_DIALOG -> {
 
                 if (ProgressDialogUtil.dismissByActivity(this@SettingMode1Activity)) {
@@ -206,7 +205,7 @@ class SettingMode1Activity : BaseActivity() {
                 }
             }
 
-        // 发送超时
+            // 发送超时
             Type.DISMISS_PROGRESS_DIALOG_TIMEOUT -> {
 
                 // 新开启线程弹通知

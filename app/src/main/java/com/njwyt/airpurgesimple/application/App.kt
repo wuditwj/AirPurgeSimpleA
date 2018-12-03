@@ -46,9 +46,10 @@ class App : Application() {
     private var errorTime = 0           // 重新发送的错误次数
 
     //--------------------------------------------------------------------------------------------//
-    private lateinit var wifiManager: WifiManager
-    private lateinit var wifiAutoConnectManager: WifiAutoConnectManager
+//    private lateinit var wifiManager: WifiManager
+//    private lateinit var wifiAutoConnectManager: WifiAutoConnectManager
     private lateinit var sharedPreferencesHelper: SharedPreferencesHelper
+    private lateinit var wifiConnect: WifiConnect
 
     private var isopen: Boolean = true//判断用户是否是开着wifi的,默认是打开的
 
@@ -304,30 +305,30 @@ class App : Application() {
         }
     }
 
-    //判断是否是系统wifi
-    private fun isSysWifi(): Boolean {
-
-        //判断当前连接是否系统wifi
-//获得当前连接的wifiIP
-        val n = wifiAutoConnectManager.getInformation(this)
-        Log.i(TAG, "当前连接:   $n")
-//        Log.i("--==>>","取消保存")
-        sharedPreferencesHelper = SharedPreferencesHelper(this, "")
-        //判断是否输入过wifiIP密码
-        var wifiIP = sharedPreferencesHelper.getSharedPreference("wifiname", "") as String
-        var wifiPas = sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String
-        if (n != null) {
-//                判断当前连接是否系统wifi
-            if (!n.equals(wifiIP)) {
-                ToastUtil.showToast(this, R.string.hint_connect)
-                return false
-            }
-        } else {
-            ToastUtil.showToast(this, R.string.hint_connect)
-            return false
-        }
-        return true
-    }
+//    //判断是否是系统wifi
+//    private fun isSysWifi(): Boolean {
+//
+//        //判断当前连接是否系统wifi
+////获得当前连接的wifiIP
+//        val n = wifiAutoConnectManager.getInformation(this)
+//        Log.i(TAG, "当前连接:   $n")
+////        Log.i("--==>>","取消保存")
+//        sharedPreferencesHelper = SharedPreferencesHelper(this, "")
+//        //判断是否输入过wifiIP密码
+//        var wifiIP = sharedPreferencesHelper.getSharedPreference("wifiname", "") as String
+//        var wifiPas = sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String
+//        if (n != null) {
+////                判断当前连接是否系统wifi
+//            if (!n.equals(wifiIP)) {
+//                ToastUtil.showToast(this, R.string.hint_connect)
+//                return false
+//            }
+//        } else {
+//            ToastUtil.showToast(this, R.string.hint_connect)
+//            return false
+//        }
+//        return true
+//    }
 
     /**
      * Activity 生命周期监听，用于监控app前后台状态切换
@@ -340,7 +341,7 @@ class App : Application() {
                 //app回到前台
                 isForeground = true
                 activitys = activity
-                initIsFirst()
+                initIsFirst2()
                 initBroadcastReceiver()
                 Log.i("--==>>", "回到前台")
             }
@@ -354,7 +355,7 @@ class App : Application() {
             activityAount--
             if (activityAount == 0) {
                 isForeground = false
-                delWifi()
+                delWifi2()
                 unregisterReceiver(receiver)
                 Log.i("--==>>", "回到后台")
             }
@@ -364,32 +365,61 @@ class App : Application() {
         override fun onActivityDestroyed(activity: Activity) {}
     }
 
-    private fun initIsFirst() {
-        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
-        wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+//    private fun initIsFirst() {
+//        wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+//        wifiAutoConnectManager = WifiAutoConnectManager(wifiManager)
+//        //判断当前wifi状态
+//        isopen = wifiAutoConnectManager.isWiFiEnable(this)
+//        Log.i(TAG, "当前wifi状态:   $isopen")
+//        //获得当前连接的wifiIP
+//        val n = wifiAutoConnectManager.getInformation(this)
+//        Log.i(TAG, "当前连接:   $n")
+////        Log.i("--==>>","取消保存")
+//        sharedPreferencesHelper = SharedPreferencesHelper(this, "")
+//        //判断是否输入过wifiIP密码
+//        var wifiIP = sharedPreferencesHelper.getSharedPreference("wifiname", "") as String
+//        var wifiPas = sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String
+//        Log.i(TAG, "wifi ip:   $wifiIP\nwifi password:   $wifiPas")
+//        if (wifiIP == "" && wifiPas == "") {
+//            wifiAutoConnectManager.close()
+//            showInputDialog()
+//        } else {
+//            if (n != null) {
+////                判断当前连接是否系统wifi
+//                if (!n.equals(wifiIP)) {
+//                    wifiAutoConnectManager.connect(wifiIP, wifiPas, WifiAutoConnectManager.WifiCipherType.WIFICIPHER_WPA)
+//                }
+//            } else {
+//                wifiAutoConnectManager.connect(wifiIP, wifiPas, WifiAutoConnectManager.WifiCipherType.WIFICIPHER_WPA)
+//            }
+//        }
+//    }
+
+    private fun initIsFirst2() {
+        wifiConnect= WifiConnect(this)
         //判断当前wifi状态
-        isopen = wifiAutoConnectManager.isWiFiEnable(this)
+        isopen=wifiConnect.isWifiEnable
         Log.i(TAG, "当前wifi状态:   $isopen")
         //获得当前连接的wifiIP
-        val n = wifiAutoConnectManager.getInformation(this)
+        val n = wifiConnect.getInformation(this)
         Log.i(TAG, "当前连接:   $n")
 //        Log.i("--==>>","取消保存")
         sharedPreferencesHelper = SharedPreferencesHelper(this, "")
         //判断是否输入过wifiIP密码
-        var wifiIP = sharedPreferencesHelper.getSharedPreference("wifiname", "") as String
-        var wifiPas = sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String
+        val wifiIP = sharedPreferencesHelper.getSharedPreference("wifiname", "") as String
+        val wifiPas = sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String
         Log.i(TAG, "wifi ip:   $wifiIP\nwifi password:   $wifiPas")
         if (wifiIP == "" && wifiPas == "") {
-            wifiAutoConnectManager.close()
+            wifiConnect.closeWifi()
             showInputDialog()
         } else {
             if (n != null) {
 //                判断当前连接是否系统wifi
                 if (!n.equals(wifiIP)) {
-                    wifiAutoConnectManager.connect(wifiIP, wifiPas, WifiAutoConnectManager.WifiCipherType.WIFICIPHER_WPA)
+                    wifiConnect.connectWifi(wifiIP,wifiPas,WifiConnect.SecurityMode.WPA2)
                 }
             } else {
-                wifiAutoConnectManager.connect(wifiIP, wifiPas, WifiAutoConnectManager.WifiCipherType.WIFICIPHER_WPA)
+                wifiConnect.connectWifi(wifiIP,wifiPas,WifiConnect.SecurityMode.WPA2)
             }
         }
     }
@@ -409,9 +439,12 @@ class App : Application() {
             //判断当前本地数据是否为空
             sharedPreferencesHelper.put("dataisnull",false)
             //存完之后直接连接
-            wifiAutoConnectManager.connect(sharedPreferencesHelper.getSharedPreference("wifiname", "") as String,
+            wifiConnect.connectWifi(sharedPreferencesHelper.getSharedPreference("wifiname", "") as String,
                     sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String,
-                    WifiAutoConnectManager.WifiCipherType.WIFICIPHER_WPA)
+                    WifiConnect.SecurityMode.WPA2)
+//            wifiAutoConnectManager.connect(sharedPreferencesHelper.getSharedPreference("wifiname", "") as String,
+//                    sharedPreferencesHelper.getSharedPreference("wifipassword", "") as String,
+//                    WifiAutoConnectManager.WifiCipherType.WIFICIPHER_WPA)
             dialog.dismiss()
         }
         //点击屏幕不消失
@@ -419,19 +452,36 @@ class App : Application() {
 
     }
 
+//    //退出当前连接并主动连接用户家自己的网络
+//    private fun delWifi() {
+//
+//        //断开当前连接
+//        wifiAutoConnectManager.dis()
+//        Log.i("--=>>", "断开连接")
+//        //取消保存网络
+//        wifiAutoConnectManager.forget("\"" + sharedPreferencesHelper.getSharedPreference("wifiname", "") as String + "\"")
+//        Log.i("--==>>", "忘记网络:   " + sharedPreferencesHelper.getSharedPreference("wifiname", "") as String)
+//        //如果之前用户wifi是关闭着的,退出的时候就关闭,否则就打开
+//        Log.i(TAG, "isopen=:$isopen")
+//        if (!isopen) {
+//            wifiAutoConnectManager.close()
+//            Log.i(TAG, "关闭wifi")
+//        }
+//    }
+
     //退出当前连接并主动连接用户家自己的网络
-    private fun delWifi() {
+    private fun delWifi2() {
 
         //断开当前连接
-        wifiAutoConnectManager.dis()
+        wifiConnect.dis()
         Log.i("--=>>", "断开连接")
         //取消保存网络
-        wifiAutoConnectManager.forget("\"" + sharedPreferencesHelper.getSharedPreference("wifiname", "") as String + "\"")
+        wifiConnect.forget("\"" + sharedPreferencesHelper.getSharedPreference("wifiname", "") as String + "\"")
         Log.i("--==>>", "忘记网络:   " + sharedPreferencesHelper.getSharedPreference("wifiname", "") as String)
         //如果之前用户wifi是关闭着的,退出的时候就关闭,否则就打开
         Log.i(TAG, "isopen=:$isopen")
         if (!isopen) {
-            wifiAutoConnectManager.close()
+            wifiConnect.closeWifi()
             Log.i(TAG, "关闭wifi")
         }
     }
@@ -470,12 +520,12 @@ class App : Application() {
 //                        titleTv.text = "已连接到网络:" + wifiInfo.ssid
                         //判断是否是在系统网络
 //                        if(wifiAutoConnectManager.getInformation(context).equals(sharedPreferencesHelper.getSharedPreference("wifiname", ""))){
-                                    //判断是否有数据,弹出初始化弹窗
-                                    if (sharedPreferencesHelper.getSharedPreference("dataisnull", false) == false) {
-                                        if (!ProgressDialogUtil.isShowing()) {
-                                            ProgressDialogUtil.show(activitys, R.string.hint_initial)
-                                        }
-                                    }
+                        //判断是否有数据,弹出初始化弹窗
+                        if (sharedPreferencesHelper.getSharedPreference("dataisnull", false) == false) {
+                            if (!ProgressDialogUtil.isShowing()) {
+                                ProgressDialogUtil.show(activitys, R.string.hint_initial)
+                            }
+                        }
 
                     }
                     else -> {
